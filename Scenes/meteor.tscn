@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cf1itamae42yc"]
+
+[ext_resource type="Texture2D" uid="uid://buu0vph3s7m8w" path="res://kenney_space-shooter-remastered/PNG/Meteors/meteorBrown_big3.png" id="1_5civa"]
+[ext_resource type="Script" uid="uid://cs32djui4btqa" path="res://Scripts/Meteor.cs" id="1_wm1ig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgiwl"]
+radius = 43.011627
+
+[node name="Meteor" type="Area2D" unique_id=113256529]
+script = ExtResource("1_wm1ig")
+
+[node name="MeteorImage" type="Sprite2D" parent="." unique_id=1409085519]
+texture = ExtResource("1_5civa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=665267727]
+shape = SubResource("CircleShape2D_bgiwl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
